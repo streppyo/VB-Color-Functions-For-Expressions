@@ -1,5 +1,5 @@
 # VB-Color-Functions-For-Expressions
-Lightweight function scripts to put into SQL Server Reporting Services and other VB applications. All of the function in this script will return only Hex Color Codes as String, e.g. `#F0ADFF`. The color function can then be easily feed into expressions.
+Inspired by functions avaliable in other BI tools, this is some lightweight function snippets to put into SQL Server Reporting Services and other VB applications. All of the function in this script will return only Hex Color Codes as String, e.g. `#F0ADFF`. The color function can then be easily fed into expressions.
 
 ## Function List
 ### ColorMix
@@ -67,3 +67,4 @@ Return a random colour that is evenly distributed over the HLS color space.
 `RandomColorHSV ()`
 Return a random colour that is evenly distributed over the HSV color space.
 
+[More on colour model](https://en.wikipedia.org/wiki/Color_model)
