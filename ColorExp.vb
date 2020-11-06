@@ -1,4 +1,4 @@
-Module ColorExp
+'Module ColorExp
 
     Public Function ColorMix(ByVal Value As Double, ByVal MaxValue As Double, ByVal MinValue As Double, ByVal ColStrMax As String, Optional ByVal ColStrMin As String = "#FFFFFF") As String
         Dim ColR1, ColG1, ColB1 As Integer
@@ -191,9 +191,6 @@ Module ColorExp
                     tCArray(2) = m
                     tCArray(3) = x + m
             End Select
-            For Each tC In tCArray
-                tC = tC + m
-            Next
             Dim RVal As Integer, GVal As Integer, BVal As Integer
             RVal = Math.Round(Math.Max(Math.Min(tCArray(1) * 255, 255), 0))
             GVal = Math.Round(Math.Max(Math.Min(tCArray(2) * 255, 255), 0))
@@ -286,4 +283,4 @@ Module ColorExp
         RandomColorHSV = HSV(r, g, b)
         Return RandomColorHSV
     End Function
-End Module
+'End Module
