@@ -2,12 +2,12 @@
 Inspired by functions avaliable in other BI tools, this is some lightweight function snippets to put into SQL Server Reporting Services and other VB applications. All of the function in this script will return only Hex Color Codes as String, e.g. `#F0ADFF`. The color function can then be easily fed into expressions.
 
 ## Related Resources
-More on [colour model](https://en.wikipedia.org/wiki/Color_model)
+More on [colour model](https://en.wikipedia.org/wiki/Color_model)\
 Applying the code on [SSRS](https://docs.microsoft.com/en-us/sql/reporting-services/report-design/add-code-to-a-report-ssrs?view=sql-server-ver15), or if you want a [more graphical guide](https://www.tutorialgateway.org/custom-code-in-ssrs-report)
 
 ## Function List
 ### ColorMix
-`ColorMix ( Value, MaxValue, MinValue, MaxValueColor [, MinValueColor] )`
+`ColorMix ( Value, MaxValue, MinValue, MaxValueColor [, MinValueColor] )`\
 A function that will interpolate intermediate colours between 2 specified colours according to _value_ provided. Can be used to create gradient colour scales for heatmap. 
 
 Parameters | Type | Optional | Description
@@ -19,7 +19,7 @@ MaxValueColor  | String | No | The Hex Colour Code for the colour that correspon
 MinValueColor  | String | Yes |  The Hex Colour Code for the colour that correspond to _MinValue_. If no value is supplied, the _MinValue_ will correspond to white `#FFFFFF`).
 
 ### ColorMix2
-`ColorMix2 ( Value, MaxValue, MinValue, MaxValueColor , MinValueColor [, MidValueColor] )`
+`ColorMix2 ( Value, MaxValue, MinValue, MaxValueColor , MinValueColor [, MidValueColor] )`\
 A function that will interpolate intermediate colours between 3 specified colours according to _value_ provided. Can be used to create gradient colour scales with 2 sides for heatmaps or other plots (e.g. blue-white-red). It is just a two-sided version of the `ColorMix()` function. 
 
 Parameters | Type | Optional | Description
@@ -32,7 +32,7 @@ MinValueColor  | String | No |  The Hex Colour Code for the colour that correspo
 MidValueColor  | String | Yes |  The Hex Colour Code for the colour that correspond to _MidValue_. If no value is supplied, the _MidValue_ will correspond to white `#FFFFFF`).
 
 ### RBG
-`RGB ( red, blue, green)`
+`RGB ( red, blue, green)`\
 Converts a RGB color code into Hex Colour Code that can be used by applications as expressions.
 Parameters | Type | Optional | Description
 ---|---|---|---
@@ -41,7 +41,7 @@ green | Double | No | Same as above (but green).
 blue | Double | No | Same as above (but blue).
 
 ### HSL
-`HSL ( hue, saturation, lightness)`
+`HSL ( hue, saturation, lightness)`\
 Converts a HSL color code into Hex Colour Code that can be used by applications as expressions.
 Parameters | Type | Optional | Description
 ---|---|---|---
@@ -50,7 +50,7 @@ saturation | Double | No | **Between 0 and 1**. Saturation of the colour. Values
 lightness | Double | No | **Between 0 and 1**. Lightness of the colour. Values that overshoot will be truncated.
 
 ### HSV
-`HSV ( hue, saturation, value)`
+`HSV ( hue, saturation, value)`\
 Converts a HSL color code into Hex Colour Code that can be used by applications as expressions.
 Parameters | Type | Optional | Description
 ---|---|---|---
@@ -59,14 +59,14 @@ saturation | Double | No | **Between 0 and 1**. Saturation of the colour. Values
 value | Double | No | **Between 0 and 1**. Value (Bightness) of the colour. Values that overshoot will be truncated.
 
 ### HSL360, HSV360
-`HSL360 ( hue, saturation, lightness)`
-`HSV360 ( hue, saturation, value)`
+`HSL360 ( hue, saturation, lightness)`\
+`HSV360 ( hue, saturation, value)`\
 Allows `HSL` and `HSV` to be called with values that ranged in `[0,360)` , `[0,100]` and  `[0,100]` respectively that will make some users to feed parameters more coveniently.
 
 ### RandomColor, 
-`RandomColor ()`
-Return a random colour that is evenly distributed over the RGB color space.
-`RandomColorHSL ()`
-Return a random colour that is evenly distributed over the HLS color space.
-`RandomColorHSV ()`
-Return a random colour that is evenly distributed over the HSV color space.
+`RandomColor ()`\
+Return a random colour that is evenly distributed over the RGB color space.\
+`RandomColorHSL ()`\
+Return a random colour that is evenly distributed over the HLS color space.\
+`RandomColorHSV ()`\
+Return a random colour that is evenly distributed over the HSV color space.\
