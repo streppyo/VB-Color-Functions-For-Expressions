@@ -1,5 +1,6 @@
-'Module ColorExp
-
+' Module ColorExp
+    ' TODO: Documentation for TextColor functions
+    ' TODO: Convert Color Names (KnownColors) to hex
     Public Function ColorMix(ByVal Value As Double, ByVal MaxValue As Double, ByVal MinValue As Double, ByVal ColStrMax As String, Optional ByVal ColStrMin As String = "#FFFFFF") As String
         Dim ColR1, ColG1, ColB1 As Integer
         Dim ColR2, ColG2, ColB2 As Integer
@@ -283,4 +284,89 @@
         RandomColorHSV = HSV(r, g, b)
         Return RandomColorHSV
     End Function
+
+    Public Function TextColorBG601(ByVal ColStr As String) As String
+        Dim ColR1, ColG1, ColB1 As Integer
+        ColR1 = Convert.ToInt32(Left(Right(ColStr, 6), 2), 16)
+        ColG1 = Convert.ToInt32(Left(Right(ColStr, 4), 2), 16)
+        ColB1 = Convert.ToInt32(Right(ColStr, 2), 16)
+        If (ColR1 * 0.299 + ColG1 * 0.587 + ColB1 * 0.114) < 186 Then
+            TextColorBG601 = "#FFFFFF"
+            Return TextColorBG601
+        Else
+            TextColorBG601 = "#000000"
+            Return TextColorBG601
+        End If
+    End Function
+
+    Public Function TextColorBG709(ByVal ColStr As String) As String
+        Dim ColR1, ColG1, ColB1 As Integer
+        ColR1 = Convert.ToInt32(Left(Right(ColStr, 6), 2), 16)
+        ColG1 = Convert.ToInt32(Left(Right(ColStr, 4), 2), 16)
+        ColB1 = Convert.ToInt32(Right(ColStr, 2), 16)
+        If (ColR1 * 0.2126 + ColG1 * 0.7152 + ColB1 * 0.0722) < 186 Then
+            TextColorBG709 = "#FFFFFF"
+            Return TextColorBG709
+        Else
+            TextColorBG709 = "#000000"
+            Return TextColorBG709
+        End If
+    End Function
+
+    Public Function TextColorBG240(ByVal ColStr As String) As String
+        Dim ColR1, ColG1, ColB1 As Integer
+        ColR1 = Convert.ToInt32(Left(Right(ColStr, 6), 2), 16)
+        ColG1 = Convert.ToInt32(Left(Right(ColStr, 4), 2), 16)
+        ColB1 = Convert.ToInt32(Right(ColStr, 2), 16)
+        If (ColR1 * 0.212 + ColG1 * 0.701 + ColB1 * 0.087) < 186 Then
+            TextColorBG240 = "#FFFFFF"
+            Return TextColorBG240
+        Else
+            TextColorBG240 = "#000000"
+            Return TextColorBG240
+        End If
+    End Function
+
+    Public Function TextColorBG601W(ByVal ColStr As String) As String
+        Dim ColR1, ColG1, ColB1 As Integer
+        ColR1 = Convert.ToInt32(Left(Right(ColStr, 6), 2), 16)
+        ColG1 = Convert.ToInt32(Left(Right(ColStr, 4), 2), 16)
+        ColB1 = Convert.ToInt32(Right(ColStr, 2), 16)
+        If (ColR1 * 0.299 + ColG1 * 0.587 + ColB1 * 0.114) < 150 Then
+            TextColorBG601W = "#FFFFFF"
+            Return TextColorBG601W
+        Else
+            TextColorBG601W = "#000000"
+            Return TextColorBG601W
+        End If
+    End Function
+
+    Public Function TextColorBG709W(ByVal ColStr As String) As String
+        Dim ColR1, ColG1, ColB1 As Integer
+        ColR1 = Convert.ToInt32(Left(Right(ColStr, 6), 2), 16)
+        ColG1 = Convert.ToInt32(Left(Right(ColStr, 4), 2), 16)
+        ColB1 = Convert.ToInt32(Right(ColStr, 2), 16)
+        If (ColR1 * 0.2126 + ColG1 * 0.7152 + ColB1 * 0.0722) < 150 Then
+            TextColorBG709W = "#FFFFFF"
+            Return TextColorBG709W
+        Else
+            TextColorBG709W = "#000000"
+            Return TextColorBG709W
+        End If
+    End Function
+
+    Public Function TextColorBG240W(ByVal ColStr As String) As String
+        Dim ColR1, ColG1, ColB1 As Integer
+        ColR1 = Convert.ToInt32(Left(Right(ColStr, 6), 2), 16)
+        ColG1 = Convert.ToInt32(Left(Right(ColStr, 4), 2), 16)
+        ColB1 = Convert.ToInt32(Right(ColStr, 2), 16)
+        If (ColR1 * 0.212 + ColG1 * 0.701 + ColB1 * 0.087) < 186 Then
+            TextColorBG240W = "#FFFFFF"
+            Return TextColorBG240W
+        Else
+            TextColorBG240W = "#000000"
+            Return TextColorBG240W
+        End If
+    End Function
+
 'End Module
